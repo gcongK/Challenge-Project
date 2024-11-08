@@ -21,6 +21,7 @@
         }
 
         header img {
+            margin-left: 30px;
             margin-right: 15px;
         }
 
@@ -29,15 +30,16 @@
             font-size: 30px;
             color: white;
             text-decoration: none;
-            margin-right: 30px;
+            margin-right: -200px;
             /* nav와 간격 조정 */
+
         }
 
         /* 상단 목차 스타일 */
         nav {
             display: flex;
             align-items: center;
-            gap: 120px;
+            gap: 75px;
             margin-left: 380px;
         }
 
@@ -45,7 +47,6 @@
             position: relative;
             color: white;
             font-size: 20px;
-            cursor: pointer;
         }
 
         nav a {
@@ -62,18 +63,26 @@
             color: rgb(183, 0, 80);
         }
 
-        /* 드롭다운 메뉴 스타일 */
-        .dropdown-content {
+        .board a {
+            display: flex;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+
+                /* 드롭다운 메뉴 스타일 */
+                .dropdown-content {
             display: none;
             position: absolute;
             background-color: white;
             color: black;
-            border-radius: 5px;
-            padding: 10px;
-            top: 100%;
-            left: -80%;
+            padding-right: 200px;
+            text-align: center;
+            top: 25px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 2;
+            z-index: 1;
             white-space: nowrap;
         }
 
@@ -85,13 +94,45 @@
             display: block;
         }
 
-        /* 드롭다운 링크 스타일 */
-        .dropdown-content div {
-            margin: 5px 5px;
+        /* 학과소개 드롭다운 링크 스타일 */
+        .diso_intro-dropdown div {
+            margin-top: 5px;
+            margin-left:10px;
             align-items: center;
+            top: 20px;
+            /* left: 1000px; 왜 꿈쩍도 않지 뻑 */
+        }
+
+        /* 교수 소개 드롭다운 링크 스타일 */
+        .prof_intro div {
+            margin-top: 5px;
+            margin-left: -2px;
+            align-items: left;
+            left: -60px;
+            top: 20px;
+        }
+
+        /* 연구 드롭다운 링크 스타일 */
+                .research div {
+            margin-top: 5px;
+            margin-left: -15px;
+            margin-right: -15px;
+            align-items: left;
+            left: -60px;
+            top: 20px;
+        }
+
+                /*학사과정 드롭다운 링크 스타일 */
+                .bachelor_course div {
+            margin-top: 5px;
+            margin-left: -2px;
+            align-items: left;
+            left: -60px;
+            top: 20px;
         }
 
         .dropdown-content a {
+            font-size: 20px;
             color: black;
             text-decoration: none;
             align-items: center;
@@ -107,36 +148,35 @@
         .main_square canvas {
             position: relative;
             flex: 1;
-            height: 500px;
+            height: 400px;
             background-color: white;
-            margin-left: 5.5%;
+            margin-left: 4%;
             margin-top: 3%;
         }
 
 
 
-    /* board_and_track_intro를 flex 컨테이너로 설정 */
-    .board_and_track_intro {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 3%;
-        margin-left: 5.5%;
-    }
+        /* board_and_track_intro를 flex 컨테이너로 설정 */
+        .board_and_track_intro {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3%;
+            margin-left: 4%;
+        }
 
-    /* board_square와 track_intro의 너비 조정 */
-    .board_square, .track_intro {
-        flex: 1;
-        margin-right: 20px;
-    }
-
-
+        /* board_square와 track_intro의 너비 조정 */
+        .board_square,
+        .track_intro {
+            flex: 1;
+            margin-right: 20px;
+        }
     </style>
 </head>
 
 <body>
     <!-- 로고와 웹페이지 제목 -->
     <header>
-        <img src="duksung_logo.svg" width="70" height="70" alt="Duksung Logo">
+        <img src="duksunglogo.svg" width="50" height="50" alt="Duksung Logo">
         <a href="main.html">덕성여자대학교 디지털소프트웨어공학부</a>
 
         <!-- 상단 목차 -->
@@ -179,7 +219,7 @@
                 </div>
             </span>
             <!-- 공지사항 -->
-            <span class="board"><a href="board.html">공지사항</a></span>
+            <span class="board"> <a href="board.html">공지사항</a> </span>
         </nav>
     </header>
 
@@ -187,7 +227,7 @@
     <!-- 메인 네모 -->
     <section class="main_square">
         <div>
-            <canvas id="main_square" width="1030" height="300" style="background-color: white">
+            <canvas id="main_square" width="1000" height="300" style="background-color: white">
             </canvas>
         </div>
     </section>
@@ -197,15 +237,15 @@
         <!-- 공지사항 네모 -->
         <section class="board_square">
             <div>
-                <canvas id="board_square" width="800" height="400" style="background-color: white">
+                <canvas id="board_square" width="640" height="300" style="background-color: white">
                 </canvas>
             </div>
         </section>
-    
+
         <!-- 트랙 소개 네모 -->
         <section class="track_intro">
             <div>
-                <canvas id="track_intro" width="800" height="400" style="background-color: white">
+                <canvas id="track_intro" width="640" height="300" style="background-color: white">
                 </canvas>
             </div>
         </section>

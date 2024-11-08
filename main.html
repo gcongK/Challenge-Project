@@ -4,279 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <title>덕성여자대학교 디지털소프트웨어공학부</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* 헤더 스타일 */
-        header {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background-color: black;
-        }
-
-        header img {
-            margin-left: 30px;
-            margin-right: 15px;
-        }
-
-        /* 헤더 텍스트 스타일 */
-        header a {
-            font-size: 30px;
-            color: white;
-            text-decoration: none;
-            margin-right: -200px;
-            /* nav와 간격 조정 */
-
-        }
-
-        /* 상단 목차 스타일 */
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 75px;
-            margin-left: 380px;
-        }
-
-        nav span {
-            position: relative;
-            color: white;
-            font-size: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-weight: 300;
-        }
-
-        nav a:visited {
-            color: white;
-        }
-
-        nav a:hover {
-            color: rgb(183, 0, 80);
-        }
-
-        .board a {
-            display: flex;
-            color: white;
-            font-size: 20px;
-            font-weight: 400;
-            text-decoration: none;
-        }
-
-
-                /* 드롭다운 메뉴 스타일 */
-                .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            color: black;
-            padding-right: 200px;
-            text-align: center;
-            top: 25px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            white-space: nowrap;
-        }
-
-        /* 드롭다운 메뉴 보이기 */
-        .diso_intro:hover .dropdown-content,
-        .prof_intro:hover .dropdown-content,
-        .research:hover .dropdown-content,
-        .bachelor_course:hover .dropdown-content {
-            display: block;
-        }
-
-        /* 학과소개 드롭다운 링크 스타일 */
-        .diso_intro-dropdown div {
-            margin-top: 5px;
-            margin-left:10px;
-            align-items: center;
-            top: 20px;
-            /* left: 1000px; 왜 꿈쩍도 않지 뻑 */
-        }
-
-        /* 교수 소개 드롭다운 링크 스타일 */
-        .prof_intro div {
-            margin-top: 5px;
-            margin-left: -2px;
-            align-items: left;
-            left: -60px;
-            top: 20px;
-        }
-
-        /* 연구 드롭다운 링크 스타일 */
-                .research div {
-            margin-top: 5px;
-            margin-left: -15px;
-            margin-right: -15px;
-            align-items: left;
-            left: -60px;
-            top: 20px;
-        }
-
-                /*학사과정 드롭다운 링크 스타일 */
-                .bachelor_course div {
-            margin-top: 5px;
-            margin-left: -2px;
-            align-items: left;
-            left: -60px;
-            top: 20px;
-        }
-
-        .dropdown-content a {
-            font-size: 20px;
-            color: black;
-            text-decoration: none;
-            align-items: center;
-        }
-
-        .dropdown-content a:hover {
-            color: rgb(183, 0, 80);
-        }
-
-
-
-        /* 메인 네모 */
-        .main_square canvas {
-            position: relative;
-            flex: 1;
-            height: 400px;
-            background-color: white;
-            margin-left: 4%;
-            margin-top: 3%;
-        }
-
-
-
-        /* board_and_track_intro를 flex 컨테이너로 설정 */
-        .board_and_track_intro {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 3%;
-            margin-left: 4%;
-        }
-
-        /* board_square와 track_intro의 너비 조정 */
-        .board_square,
-        .track_intro {
-            flex: 1;
-            margin-right: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- 로고와 웹페이지 제목 -->
     <header>
-        <img src="duksung_logo.svg" width="50" height="50" alt="Duksung Logo">
+        <img src="duksung_logo.svg" alt="Duksung Logo">
         <a href="main.html">덕성여자대학교 디지털소프트웨어공학부</a>
 
         <!-- 상단 목차 -->
         <nav>
-            <!-- 학과 소개 -->
             <span class="diso_intro">학과 소개
                 <div class="dropdown-content">
-                    <div><a href="diso_intro.html">학과 소개</a></div>
-                    <div><a href="goal.html">교육 목표와 인재상</a></div>
-                    <div><a href="track_intro.html">트랙 소개</a></div>
-                    <div><a href="graduation.html">졸업 요건</a></div>
-                    <div><a href="location_contact.html">위치 및 연락처</a></div>
+                    <a href="diso_intro.html">학과 소개</a>
+                    <a href="goal.html">교육 목표와 인재상</a>
+                    <a href="track_intro.html">트랙 소개</a>
+                    <a href="graduation.html">졸업 요건</a>
+                    <a href="location_contact.html">위치 및 연락처</a>
                 </div>
             </span>
-            <!-- 교수 소개 -->
             <span class="prof_intro">교수 소개
                 <div class="dropdown-content">
-                    <div><a href="prof_intro.html">교수진 소개</a></div>
+                    <a href="prof_intro.html">교수진 소개</a>
                 </div>
             </span>
-            <!-- 연구 -->
             <span class="research">연구
                 <div class="dropdown-content">
-                    <div><a href="lab">연구실 목록</a></div>
-                    <div><a href="thesis">논문 소개</a></div>
+                    <a href="lab">연구실 목록</a>
+                    <a href="thesis">논문 소개</a>
                 </div>
             </span>
-            <!-- 학사과정 -->
             <span class="bachelor_course">학사과정
                 <div class="dropdown-content">
-                    <div><a href="by_grade">학년별 학사 과정</a></div>
-                    <div><a href="common_course">트랙 공통 과목</a></div>
-                    <div><a href="bigdata_course">트랙 인정 과목 - 빅데이터</a></div>
-                    <div><a href="webapp_course">트랙 인정 과목 - 웹앤앱</a></div>
-                    <div><a href="ai_course">트랙 인정 과목 - 인공지능</a></div>
-                    <div><a href="IoT_course">트랙 인정 과목 - 사물인터넷</a></div>
-                    <div><a href="security_course">트랙 인정 과목 - 사이버보안</a></div>
-                    <div><a href="media_course">트랙 인정 과목 - 미디어</a></div>
-                    <div><a href="game_course">트랙 인정 과목 - 게임</a></div>
+                    <a href="by_grade">학년별 학사 과정</a>
+                    <a href="common_course">트랙 공통 과목</a>
                 </div>
             </span>
-            <!-- 공지사항 -->
-            <span class="board"> <a href="board.html">공지사항</a> </span>
+            <span class="board">공지사항
+                <div class="dropdown-content">
+                    <a href="board.html">공지사항</a>
+                </div>
+            </span>
         </nav>
     </header>
 
-
     <!-- 메인 네모 -->
     <section class="main_square">
-        <div>
-            <canvas id="main_square" width="1000" height="300" style="background-color: white">
-            </canvas>
-        </div>
+        <canvas id="main_square"></canvas>
     </section>
-
 
     <section class="board_and_track_intro">
-        <!-- 공지사항 네모 -->
+        <!-- 공지사항 섹션 -->
         <section class="board_square">
-            <div>
-                <canvas id="board_square" width="640" height="300" style="background-color: white">
-                </canvas>
-            </div>
+            <h3 class="section-title">공지사항</h3>
+            <hr class="title-line">
+            <canvas id="board_square"></canvas>
         </section>
-
-        <!-- 트랙 소개 네모 -->
+    
+        <!-- 트랙 소개 섹션 -->
         <section class="track_intro">
-            <div>
-                <canvas id="track_intro" width="640" height="300" style="background-color: white">
-                </canvas>
-            </div>
+            <h3 class="section-title">트랙</h3>
+            <hr class="title-line">
+            <canvas id="track_intro"></canvas>
         </section>
     </section>
+    
 
-    <script>
-        const canvas = document.getElementById('main_square');
-        const ctx = canvas.getContext('2d');
-
-        // 텍스트 스타일 설정
-        ctx.font = '30px Arial';
-        ctx.fillStyle = 'black';
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'middle';
-
-        // 텍스트 내용
-        const text = '도전하며 성장하는 미래\n여성 과학 인재의 요람\n덕성여대 디지털소프트웨어공학부';
-
-        // 텍스트를 줄 단위로 나누기
-        const lines = text.split('\n');
-        const lineHeight = 50; // 줄 간격 설정
-
-        // 각 줄을 캔버스에 그리기
-        lines.forEach((line, index) => {
-            const y = canvas.height / 2 - (lines.length - 1) * lineHeight / 2 + index * lineHeight;
-            ctx.fillText(line, 50, y);
-        });
-
-    </script>
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>

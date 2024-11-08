@@ -1,0 +1,156 @@
+/* SUIT-Regular 폰트 설정 */
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 기본 스타일 설정 */
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: 'SUIT-Regular', Arial, sans-serif;
+}
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    align-items: center;
+    padding: 0.5%;
+    background-color: black;
+}
+
+header img {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 3%;
+}
+
+header a {
+    font-size: 1.4vw; /* 상단 제목 글씨 크기 조정 */
+    color: white;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+/* 상단 메뉴 스타일 */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+}
+
+nav span {
+    position: relative;
+    font-size: 1.2vw;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+nav span:hover {
+    color: rgb(183, 0, 80);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav .board {
+    margin-right: 4vw;
+}
+
+nav a:hover {
+    color: rgb(183, 0, 80);
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 0.5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+nav span:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.2vw 0.5vw;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8vw;
+}
+
+.dropdown-content a:hover {
+    color: rgb(183, 0, 80);
+}
+
+/* 메인 네모 스타일 */
+.main_square {
+    margin: 2% 4%; /* 세로 여백 2%, 가로 여백 4% */
+    display: block;
+    width: calc(100% - 8%);
+}
+
+.main_square canvas {
+    width: 100%;
+    height: 20vw;
+    background-color: white;
+}
+
+/* 공지사항 및 트랙 소개 섹션 */
+.board_and_track_intro {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 4%; /* 세로 여백 2%, 가로 여백 4% */
+    gap: 2%;
+}
+
+.board_square,
+.track_intro {
+    flex: 1;
+}
+
+/* 공지사항 및 트랙 제목 스타일 */
+.section-title {
+    font-size: 1.2vw;
+    margin: 0;
+    padding-bottom: 0.2vw;
+    color: white;
+    display: block;
+    text-align: left;
+}
+
+/* 제목 아래 단순한 회색 실선 스타일 */
+.title-line {
+    display: block;
+    width: 30px; /* 선의 고정된 길이 */
+    height: 0.35px; /* 선의 두께를 고정 */
+    background-color: #666666; /* 회색 실선 */
+    border: none; /* 기본 브라우저 테두리 제거 */
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin-top: 0.1vw; /* 제목과 선 간격 조정 */
+    margin-bottom: 1.5vw; /* 선과 아래의 흰 박스 사이의 여백 */
+}
+
+
+
+
+.board_square canvas,
+.track_intro canvas {
+    width: 100%;
+    height: 12vw; /* 크기 줄이기 */
+    background-color: white;
+}

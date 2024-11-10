@@ -9,14 +9,32 @@
         @import url(default.css);
 
         /* 메인 네모 */
+        .main_square {
+            margin: 3% auto; /* 좌우 여백을 자동으로 설정하여 중앙 정렬 */
+            width: 92%;      /* 좌우 4% 여백을 제외한 너비 설정 */
+            box-sizing: border-box;
+        }
+
         .main_square canvas {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-color: white;
+        }
+        
+        /*
+        .main_square canvas {
+            
             position: relative;
             flex: 1;
             height: 400px;
             background-color: white;
             margin-left: 4%;
+            margin-right: 4%;
             margin-top: 3%;
         }
+            */
+
 
         .board_and_track_intro_text {
             margin-top: 4%;
@@ -39,7 +57,7 @@
         /* board_and_track_intro를 flex 컨테이너로 설정 */
         .board_and_track_intro {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* 내부 항목을 양 끝으로 정렬 */
             margin-top: 3%;
             margin-left: 4%;
         }

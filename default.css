@@ -78,9 +78,7 @@ nav span a:hover {
 color: rgb(183, 0, 80); /* 호버 시 색상 설정 */
 }
 
-nav span a:visited {
-color: black; /* 방문한 링크 색상 설정 */
-}
+
 
 
 
@@ -99,6 +97,7 @@ color: black; /* 방문한 링크 색상 설정 */
 
 /* 학과소개 드롭다운 링크 스타일 */
 .diso_intro div {
+    color: black;
     margin-top: 5px;
     margin-left:10px;
     align-items: center;

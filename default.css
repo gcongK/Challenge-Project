@@ -62,7 +62,7 @@ nav a:hover {
 }
 
 nav a:visited {
-    color: white;
+    color: inherit; /* 부모 요소의 색상을 상속받음 */
 }
 
 

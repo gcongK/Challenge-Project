@@ -39,6 +39,21 @@
             margin-bottom: 20px;
         }
 
+        ul, ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        .sub-list {
+            list-style-type: circle;
+            margin-left: 20px;
+        }
+        .sub-sub-list {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
     </style>
 </head>
 
@@ -93,7 +108,31 @@
         <section class="main-section">
             <h2>졸업 요건</h2>
             <div class="description">
-                <p>졸업하지마</p>
+                <ol>
+                    <li>
+                        <b>졸업프로젝트(캡스톤디자인) 1, 2 수강</b>
+                        <ul class="sub-list">
+                            <li>졸업프로젝트의 시작 시점은 다음과 같이 유형별로 차이가 있습니다.</li>
+                            <ul class="sub-sub-list">
+                                <p>- 심화, 제1, 2전공, 학사 통합(후기): 3학년 1학기 종료 시점</p>
+                                <p>- 학사 통합(전기): 2학년 2학기 종료 시점</p>
+                            </ul>
+                        </ul>
+                    </li>
+                    <li><b>졸업전시회 참여</b></li>
+                    <li>
+                        <b>어학 및 전공 관련 인증(다음 중 1개 이상 충족)</b>
+                        <ul class="sub-list">
+                            <p>① 영어 TOEIC 700점 이상 혹은 이에 준하는 어학능력점수 취득</p>
+                            <p>② 국가/민간 공인자격증 취득</p>
+                            <ul class="sub-sub-list">
+                                <p>- 국가자격증: 정보처리기사(한국산업인력공단) 또는 이에 준하는 공인자격증 취득</p>
+                                <p>- 민간자격증: DB(OCP, SQLD), JAVA(OCJP) 등 컴퓨터 관련 분석 자격증 취득</p>
+                            </ul>
+                            <p>③ 공인된 소프트웨어 경진대회 입상</p>
+                        </ul>
+                    </li>
+                </ol>
             </div>
         </section>
     </main>

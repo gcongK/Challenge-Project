@@ -39,6 +39,34 @@
             margin-bottom: 20px;
         }
 
+        /* 이미지 컨테이너 */
+        .image-container {
+            display: flex;
+            justify-content: space-around; /* 사진들을 양 옆으로 정렬 */
+            align-items: center;
+            gap: 20px; /* 이미지 간의 간격 줄이기 */
+            margin-top: 5px;
+            margin-left: 10%; /* 왼쪽 여백 추가 */
+            margin-right: 10%; /* 왼쪽 여백 추가 */
+        }
+
+        .image-container1 img {
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container2 img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 주소 스타일 */
+        .contact-info {
+            margin-top: 50px;
+            margin-left: 10%;
+        }
     </style>
 </head>
 
@@ -93,7 +121,31 @@
         <section class="main-section">
             <h2>위치 및 연락처</h2>
             <div class="description">
-                <p>찾아오지마</p>
+
+                <!-- 두 개의 이미지 추가 -->
+                <div class = "image-container">
+                    <div class="image-container1">
+                        <div>
+                            <h3>&lt;덕성여자대학교&gt;</h3>
+                            <img src="duksung_map.png" alt="덕성여자대학교 지도">
+                        </div>
+                    </div>
+                    <div class="image-container2">   
+                        <div>
+                            <h3>&lt;차미리사관&gt;</h3>
+                            <img src="cha_map.png" alt="차미리사관 지도">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 주소 및 연락처 정보 -->
+                <div class="contact-info">
+                    <ul>
+                        <li>[01369] 서울특별시 도봉구 상암로 144길 33 덕성여자대학교 쌍문근화캠퍼스</li>
+                        <li>덕성여자대학교 차미리사관 229호</li>
+                        <li>TEL: 02-901-8209</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>

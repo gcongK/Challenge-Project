@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'SUIT-Regular', Arial;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+header img {
+    margin-left: 30px;
+    margin-right: 15px;
+}
+
+/* 헤더 텍스트 스타일 */
+header a {
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap; /* 한 줄로 나오게 설정 */
+}
+
+/* 상단 목차 스타일 */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* 균등하게 배치 */
+    gap: -20px;
+    width: 40%; /* 너비 너무 넓어서 줄임 */
+    /* margin: 0 auto; */
+    margin-left: 300px; /* 너비 줄여서 여기도 수정 */
+}
+
+nav span {
+    position: relative;
+    color: white;
+    font-size: 20px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
+
+nav a:hover {
+    color: rgb(183, 0, 80);
+}
+
+nav a:visited {
+    color: inherit; /* 부모 요소의 색상을 상속받음 */
+}
+
+
+/* 교수진 소개와 공지사항 스타일 */
+nav span a {
+font-size: 20px; /* 텍스트 크기 설정 */
+color: white; /* 텍스트 색상 설정 */
+text-decoration: none; /* 밑줄 제거 */
+font-weight: 400; /* 텍스트 굵기 설정 */
+}
+
+nav span a:hover {
+color: rgb(183, 0, 80); /* 호버 시 색상 설정 */
+}
+
+
+
+
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    text-align: center;
+    top: 80px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+/* 학과소개 드롭다운 링크 스타일 */
+.diso_intro div {
+    color: black;
+    margin-top: 5px;
+    margin-left:10px;
+    align-items: center;
+    top: 20px;
+    left: -38px;
+    line-height: 0.4;
+}
+
+
+/* 연구 드롭다운 링크 스타일 */
+.research div {
+    margin-top: 5px;
+    margin-left: 23px;
+    margin-right: -15px;
+    align-items: left;
+    left: -50px;
+    top: 20px;
+    line-height: 0.4;
+}
+
+/*학사과정 드롭다운 링크 스타일 */
+.bachelor_course div {
+    margin-top: 5px;
+    margin-left: -2px;
+    align-items: left;
+    left: -55px;
+    top: 20px;
+    line-height: 0.4;
+}
+
+/* 드롭다운 메뉴 보이기 */
+.diso_intro:hover .dropdown-content,
+.prof_intro:hover .dropdown-content,
+.research:hover .dropdown-content,
+.bachelor_course:hover .dropdown-content {
+    display: block;
+}
+
+/* 드롭다운 링크 스타일 */
+.dropdown-content a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    color: rgb(183, 0, 80);
+}

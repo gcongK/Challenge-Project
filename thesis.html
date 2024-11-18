@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>덕성여자대학교 디지털소프트웨어공학부</title>
+    <style>
+        @import url(default.css);
+
+        /* 섹션 스타일 */
+        .main-section {
+            background-color: white;
+            padding: 3%;
+            margin: 3% auto;
+            width: 92%;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+        /* 제목 스타일 */
+        .main-section h2 {
+            font-size: 1.8em;
+            color:black;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 10px;
+            text-align: left; /* 제목 왼쪽 정렬 */
+        }
+
+        /* 부모 컨테이너 스타일 */
+        .track-container {
+    display: flex; /* 수평으로 배치 */
+    gap: 20px; /* 버튼과 설명 사이 간격 */
+    margin-top: 50px;
+    flex-direction: column; /* 가로로 배치 */
+}
+
+        /* 트랙 버튼 리스트 스타일 */
+        .track-list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .track-button {
+    background-color: rgb(48, 46, 46);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: inline-flex; /* 텍스트가 가로로 배치되도록 설정 */
+    flex-direction: row; /* 가로로 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    flex: 1 1 calc(25% - 20px); /* 각 버튼의 너비를 25%로 설정하고, 간격을 고려 */
+    box-sizing: border-box; /* 패딩 및 간격 포함하여 너비 계산 */
+}
+
+
+
+
+        .track-button:hover {
+            background-color: #666;
+        }
+
+        .track-button.active {
+            background-color: #888;
+        }
+
+        /* 트랙 설명 스타일 */
+        .track-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 300px; /* 최소 높이 설정 */
+        }
+
+        .description {
+            display: none;
+            font-size: 1em;
+            line-height: 1.6;
+            color:black;
+        }
+
+        .description.active {
+            display: block;
+        }
+
+        li {
+            margin-bottom: 15px; /* 항목 사이의 간격 조정 */
+            line-height: 1.6; /* 줄 간격 조정 */
+            color: black; /* 글자 색상 검정으로 설정 */
+        }
+
+
+        /* 교수 컨테이너 스타일 */
+        .track-description {
+            display: flex; /* 두 항목을 가로로 배치 */
+            gap: 30px; /* 항목 간 간격 */
+            flex-wrap: wrap; /* 항목이 일정 간격을 넘으면 다음 줄로 배치 */
+            justify-content: flex-start; /* 항목을 왼쪽 정렬 */
+        }
+
+        .track-description {
+            font-size: 0.9em;
+            color: black;
+            flex-direction: row; /* 세로로 배치 */
+            display: flex; /* Flexbox 사용 */
+            gap: 30px; /* 이미지와 텍스트 사이 간격 */
+            align-items: flex-start; /* 이미지와 텍스트 상단 정렬 */
+        }
+
+        .track-description .text {
+            display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px; /* 항목 간 간격 */
+    font-size: 1em;
+    color: black;
+    font-size: 20px;
+        }
+
+        .track-description .texts {
+            width: 1000px;
+            color: black;
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        .track-description img {
+            width: 160px;
+            height: 210px;
+            margin-right: 20px;
+        }
+
+
+        .track-description .text p {
+            margin: 0 0 10px;
+        }
+
+        .track-description .texts a {
+            color: rgb(183, 0, 80);
+            text-decoration: none;
+        }
+
+        .track-description .texts a:visited{
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 로고와 웹페이지 제목 -->
+    <header>
+        <img src="duksung_logo.svg" width="50" height="50" alt="Duksung Logo">
+        <a href="main.html">덕성여자대학교 디지털소프트웨어공학부</a>
+
+        <!-- 상단 목차 -->
+        <nav>
+            <!-- 학과 소개 -->
+            <span class="diso_intro">학과 소개
+                <div class="dropdown-content">
+                    <a href="diso_intro.html">학과 소개</a>
+                    <a href="goal.html">교육 목표와 인재상</a>
+                    <a href="track_intro.html">트랙 소개</a>
+                    <a href="graduation.html">졸업 요건</a>
+                    <a href="location_contact.html">위치 및 연락처</a>
+                </div>
+            </span>
+            <!-- 교수 소개 -->
+            <span class="prof_intro"><a href="prof_intro.html">교수진 소개</a></span>
+            <!-- 연구 -->
+            <span class="research">연구
+                <div class="dropdown-content">
+                    <a href="lab.html">연구실 목록</a>
+                    <a href="thesis.html">논문 소개</a>
+                </div>
+            </span>
+            <!-- 학사과정 -->
+            <span class="bachelor_course">학사과정
+                <div class="dropdown-content">
+                    <a href="bachelor_course/by_grade.html">학년별 학사 과정</a>
+                    <a href="bachelor_course/common_course.html">트랙 공통 과목</a>
+                    <a href="bachelor_course/bigdata_course.html">트랙 인정 과목 - 빅데이터</a>
+                    <a href="bachelor_course/webapp_course.html">트랙 인정 과목 - 웹앤앱</a>
+                    <a href="bachelor_course/ai_course.html">트랙 인정 과목 - 인공지능</a>
+                    <a href="bachelor_course/IoT_course.html">트랙 인정 과목 - 사물인터넷</a>
+                    <a href="bachelor_course/security_course.html">트랙 인정 과목 - 사이버보안</a>
+                    <a href="bachelor_course/media_course.html">트랙 인정 과목 - 미디어</a>
+                    <a href="bachelor_course/game_course.html">트랙 인정 과목 - 게임</a>
+                </div>
+            </span>
+            <!-- 공지사항 -->
+            <span class="board"><a href="board.html">공지사항</a></span>
+        </nav>
+    </header>
+
+    <!--트랙 소개-->
+    <main>
+        <section class="main-section">
+            <h2>논문 소개</h2>
+
+            <div class="track-container">
+                <!-- 트랙 리스트 -->
+<!-- 트랙 버튼 리스트 수정 -->
+<div class="track-list">
+    <button class="track-button" field="bigdata">객체지향시스템 및 소프트웨어공학</button>
+    <button class="track-button" field="algor">알고리즘</button>
+    <button class="track-button" field="aiiot">인공지능 및 AIoT</button>
+    <button class="track-button" field="embedded">임베디드 시스템</button>
+    <button class="track-button" field="computerscience">전산학</button>
+    <button class="track-button" field="media">미디어 공학</button>
+    <button class="track-button" field="networksecurity">네트워크 보안</button>
+    <button class="track-button" field="crypto">암호 알고리즘</button>
+</div>
+
+<!-- 트랙 설명 수정 -->            
+<div class="track-description">
+    <div id="bigdata" class="description active">
+        <div class="track-description">
+            <img src="prof_img/emmduhun.jpg" alt="emmduhun">
+            <div class="text">
+                <p>음두헌 교수</p>
+            <div class="texts">
+                <p>[MobileMapGen: 모바일 맵 응용 생성기], 2013, 한국정보기술학회논문지</p>
+                <p>[Drupal 기반 맵 응용 생성기 (MapAppGen) : 맛집탐방 응용 생성 사례], 2012, 정보처리학회논문지</p>
+                <p>[맵 응용을 위한 Drupal 모듈 생성기(MapModuleGen)], 2010, 한국정보기술학회논문지</p>
+                <p>[웹 응용 생성기의 설계 및 구현], 2010, 한국정보기술학회논문지</p>
+                <p>[모바일 데이터베이스 응용을 위한 스크립트 자동 생성기의 설계 및 구현], 2009, 인터넷정보학회논문지</p>
+                <a href="https://www.dbpia.co.kr/author/authorDetail?ancId=421665">논문 바로가기</a>
+                </div>
+            </div>
+
+            <img src="prof_img/choiseunghoon.jpg" alt="choiseunghoon">
+            <div class="text">
+                <p>최승훈 교수</p>
+            <div class="texts">
+                <p>[IBM 왓슨 챗봇을 활용한 노동법 상담 시스템],  2019,  디지털콘텐츠학회논문지</p>
+                    <p>[시맨틱 웹 기술을 이용한 확장된 특성 모델의 제한조건 검증],  2011,  한국정보기술학회논문지</p>
+                    <p>[시맨틱 웹 기술을 이용한 특성 모델 및 특성 구성 검증 도구],  2011,  한국IT서비스학회지</p>
+                    <p>[시맨틱 웹 기술을 이용한 특성 구성 검증],  2010,  인터넷정보학회논문지</p>
+                    <p>[온톨로지와 규칙 엔진을 이용한 특성 모델 검증],  2010,  자연과학논문집</p>
+                <a href="https://www.dbpia.co.kr/author/authorDetail?ancId=419819">논문 바로가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 알고리즘 -->
+    <div id="algor" class="description">
+        <div class="track-description">
+            <img src="prof_img/leejuyoung.jpg" alt="leejuyoung">
+            <div class="text">
+                <p>이주영 교수</p>
+            <div class="texts">
+                <p>[사용자 기반 협업 필터링을 활용한 취미활동물품 대여 플랫폼에서의 추천 시스템],  2022,  디지털콘텐츠학회논문지</p>
+                    <p>[그리드 맵의 수직 분할에 의한 탐색 공간 축소],  2016,  정보과학회논문지</p>
+                    <p>[최소신장트리를 위한 크루스칼 알고리즘의 효율적인 구현],  2014,  한국컴퓨터정보학회 논문지</p>
+                    <p>[Contents Sharing Model in Distributed Collaboration Environment],  2014,  한국컴퓨터정보학회 논문지</p>
+                    <p>[향상된 트래킹 시스템과 실시간 수성 사인펜을 위한 사실적 드로잉],  2014,  한국컴퓨터정보학회 논문지
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=70732">논문 바로가기</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- 인공지능 -->
+    <div id="aiiot" class="description">
+        <div class="track-description">
+            <img src="prof_img/youkyunah.jpg" alt="youkyunah">
+            <div class="text">
+                <p>유견아 교수</p>
+            <div class="texts">
+                <p>[실시간 감상 기록 분석 기반 영화 추천 서비스의 설계 및 구현],  2023,  디지털콘텐츠학회논문지</p>
+                    <p>[Realistic Image Generation from Text by Using BERT-Based Embedding],  2022,  Electronics</p>
+                    <p>[사물 인식 기술을 이용한 초등영어교육 애플리케이션의 개발],  2021,  디지털콘텐츠학회논문지</p>
+                    <p>[손그림 자동분석에 기반한 퍼지 추론 심리진단 응용의 개발],  2021,  디지털콘텐츠학회논문지</p>
+                    <p>[텍스트와 이미지 태그 데이터에 기반한 뉴스기사 추천시스템],  2020,  디지털콘텐츠학회논문지</p>
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=350397">논문 바로가기</a></p>
+                </div>
+            </div>
+
+            <img src="prof_img/parktaejung.jpg" alt="parktaejung">
+            <div class="text">
+                <p>박태정 교수</p>
+            <div class="texts">
+                <p>[MPIIFaceGaze 데이터세트 기반 시선 예측 모델의 효율적인 전처리 기법 및 증강 기법],  2024,  디지털콘텐츠학회논문지</p>
+                    <p>[다중 카메라 기반 시선 추적 데이터세트의 기하 정보 추정 기법],  2023,  디지털콘텐츠학회논문지</p>
+                    <p>[Looking to Personalize Gaze Estimation Using Transformers],  2023,  Journal of Computing Science and Engineering</p>
+                    <p>[인공지능 기반 시선 추적 기법을 활용한 모바일 커머스 사용자 시선 데이터 분석],  2023,  디지털콘텐츠학회논문지</p>
+                    <p>[“Blinks in the Dark”: Blink Estimation with Domain Adversarial Training (BEAT) Network],  2023,  IEEE Transactions on Consumer Electronics</p>
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=1448932">논문 바로가기</a></p>
+                </div>
+            </div>
+
+
+            <img src="prof_img/leejaeho.jpg" alt="leejaeho">
+            <div class="text">
+                <p>이재호 교수</p>
+            <div class="texts">
+                <p>[Intelligent Resource Allocation Scheme Using Reinforcement Learning for Efficient Data Transmission in VANET],  2024,  SENSORS</p>
+                    <p>[음원 분리 및 자동 채보 학습을 활용한 음악 유사성 분석 시스템 구현],  2023,  한국통신학회논문지</p>
+                    <p>[Music Transformer 기반 음악 정보의 가중치 변형을 통한 멜로디 생성 모델 구현],  2023,  대한임베디드공학회논문지</p>
+                    <p>[P-3C 해상초계기 전술분석도구를 위한 전술 상황표시기의 효율적 전시 기법],  2023,  한국항행학회논문지</p>
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=4032673">논문 바로가기</a></p>
+                </div>
+            </div>
+
+
+            <img src="prof_img/kangjihyun.jpg" alt="kangjihyun">
+            <div class="text">
+                <p>강지헌 교수</p>
+            <div class="texts">
+                <p>[Precision Diagnosis of Glaucoma with VLLM Ensemble Deep Learning],  2024,  APPLIED SCIENCES-BASEL</p>
+                    <p>[Enhancing ToF Sensor Precision Using 3D Models and Simulation for Vision Inspection in Industrial Mobile Robots],  2024,  APPLIED SCIENCES-BASEL</p>
+                    <p>[Efficient Distance Measurement Using QR Code for Precise Positioning of VTOL UAVs],  2024,  The Journal of Korean Institute of Communications and Information Sciences</p>
+                    <p>[Fixed Point Cloud Normalization and None-Sequential Modeling for Hand Gesture Recognition Based on Short-Range mmWave Radar Sensor’s Sparse Time-Series Point Cloud],  2024,  IEEE Sensors Journal</p>
+                    <p>[재고 관리 및 도난 방지를 위한 영상분석 기반 무인 매장 관리 시스템],  2024,  한국산업정보학회논문지</p>
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=1162702">논문 바로가기</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 임베디드 -->
+    <div id="embedded" class="description">
+        <div class="track-description">
+    <img src="prof_img/leehyungkyu.jpg" alt="leehyungkyu">
+    <div class="text">
+        <p>이형규 교수</p>
+    <div class="texts">
+        <p>[센서 모듈과 인공신경망을 활용한 실시간 반려견 행동 분석 및 케어 시스템],  2024,  한국산업정보학회논문지</p>
+                    <p>[e-Cryptex: 물리적으로 복제 불가능한 기능을 활용한 역공학 방지 기법],  2024,  한국산업정보학회논문지</p>
+                    <p>[딥러닝 기반 사용자 친화형 키오스크 시스템],  2024,  한국산업정보학회논문지</p>
+                    <p>[On-Chip Energy Harvesting System with Storage-Less MPPT for IoTs],  2023,  JOURNAL OF ELECTRICAL ENGINEERING & TECHNOLOGY</p>
+                    <p>[웨어러블 센서를 활용한 경량 인공신경망 기반 손동작 인식기술],  2022,  대한임베디드공학회논문지</p>
+        <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=3695609">논문 바로가기</a></p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- 전산학 -->
+    <div id="computerscience" class="description">
+        <div class="track-description">
+    <img src="prof_img/leekyoungmi.jpg" alt="leekyoungmi">
+    <div class="text">
+        <p>이경미 교수</p>
+    <div class="texts">
+        <p>[센서 모듈과 인공신경망을 활용한 실시간 반려견 행동 분석 및 케어 시스템],  2024,  한국산업정보학회논문지</p>
+                    <p>[e-Cryptex: 물리적으로 복제 불가능한 기능을 활용한 역공학 방지 기법],  2024,  한국산업정보학회논문지</p>
+                    <p>[딥러닝 기반 사용자 친화형 키오스크 시스템],  2024,  한국산업정보학회논문지</p>
+                    <p>[On-Chip Energy Harvesting System with Storage-Less MPPT for IoTs],  2023,  JOURNAL OF ELECTRICAL ENGINEERING & TECHNOLOGY</p>
+                    <p>[웨어러블 센서를 활용한 경량 인공신경망 기반 손동작 인식기술],  2022,  대한임베디드공학회논문지</p>
+        <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=3695609">논문 바로가기</a></p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- 미디어공학 -->
+    <div id="media" class="description">
+        <div class="track-description">
+            <img src="prof_img/najungjo.jpg" alt="najungjo">
+            <div class="text">
+                <p>나정조 교수</p>
+            <div class="texts">
+                <p>[비자살적 자해 행동 예측을 위한 스마트워치 연동 애플리케이션],  2024,  한국영상학회논문집</p>
+                    <p>[예술치료의 매체로써 VR/AR/MR 콘텐츠 사례분석 및 제언],  2023,  한국예술치료학회지</p>
+                    <p>[Designing Digital Therapeutic Content Using Chronic Disease Data: A Focus on Improving Urinary Dysfunction],  2023,  International Neurourology Journal</p>
+                    <p>[메타버스 내 공공도서관 사용성 분석],  2023,  한국비블리아학회지</p>
+                    <p>[광학문자인식(OCR)을 통한 데이터 분석 기반의 채식주의 유형 정보 제공 및 추천 애플리케이션 개발],  2022,  한국영상학회논문집</p>
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=4987499">논문 바로가기</a></p>
+                </div>
+            </div>
+
+            <img src="prof_img/limyangkyu.jpg" alt="limyangkyu">
+            <div class="text">
+                <p>임양규 교수</p>
+            <div class="texts">
+                <p>[SoundLOGO: GPS 데이터를 이용한 음악적 소니피케이션 생성 방법과 효과에 관한 연구],  2024,  한국게임학회 논문지</p>
+                    <p>[글래스형 증강현실 내비게이션 애플리케이션에서의 GUI 연구],  2022,  아시아태평양융합연구교류논문지
+                    </p>
+                    <p>[Digital Chuimsae: Evolution of Korean Traditional Performing Arts],  2022,  Communications in Computer and Information Science</p>
+                    <p>[Metaverse-Driven Interactive Performing Arts Contents Development],  2022,  Communications in Computer and Information Science</p>
+                    <p>[A Study on Software Proposals for Optimization of Augmented Reality Glasses],  2022,  Communications in Computer and Information Science</p>
+
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=5228427">논문 바로가기</a></p>
+                </div>
+            </div>
+
+
+            <img src="prof_img/limyangmi.jpg" alt="limyangmi">
+            <div class="text">
+                <p>임양미 교수</p>
+            <div class="texts">
+                <p>[전시공간에 최적화된 얼굴 교환 애플리케이션 개발],  2024,  방송공학회 논문지</p>
+                    <p>[자연어 처리 기반 하이브리드 추천시스템],  2024,  차세대컨버전스정보서비스기술논문지</p>
+                    <p>[A Study on the Method of Predicting the Success of Bank Telemarketing],  2024,  Nanotechnology Perceptions</p>
+                    <p>[A Study on the Prediction of Bike Availability Using Machine Learning],  2024,  Nanotechnology Perceptions</p>
+                    <p>[Design and Implementation of Impromptu Mobile Social Karaoke for Digital Cultural Spaces in the New Normal Era],  2023,  APPLIED SCIENCES-BASEL</p>
+                <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=5131225">논문 바로가기</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- 네트워크 보안 -->
+        <div id="networksecurity" class="description">
+            <div class="track-description">
+                <img src="prof_img/baeknamgyun.jpg" alt="baeknamgyun">
+                <div class="text">
+                    <p>백남균 교수</p>
+                <div class="texts">
+                    <p>[Computer Vision-Based Risk Assessment on Heterogeneous Mobile Network Operating Environments],  2024,  TECHNICAL GAZETTE</p>
+                    <p>[ICT 융합사회의 개인정보 노출 위험평가 매트릭스 개발],  2023,  한국정보통신학회논문지</p>
+                    <p>[Detection of DoS Attacks in Smart City Networks with Feature Distance Maps: A Statistical Approach],  2023,  IEEE Internet of Things Journal</p>
+                    <p>[Quantitative Approach for Calculating DRDoS Risk],  2023,  Journal of Information and Communication Convergence Engineering</p>
+                    <p>[SBOM의 무결성 확보를 위한 스마트컨트랙트 블록체인 활용 방안 연구],  2023,  한국산업보안연구</p>
+                    <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=482644">논문 바로가기</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 암호 보안 -->
+        <div id="crypto" class="description">
+            <div class="track-description">
+                <img src="prof_img/seominhyeh.jpg" alt="seominhyeh">
+                <div class="text">
+                    <p>서민혜 교수</p>
+                <div class="texts">
+                    <p>[스마트 홈에서 안전한 디바이스 제어 명령을 위한 토큰 기반 사용자 동적 접근제어 기법],  2024,  정보보호학회논문지</p>
+                    <p>[Secure and Efficient Deduplication for Cloud Storage with Dynamic Ownership Management],  2023,  Applied Sciences-Basel</p>
+                    <p>[M-SIDH 구현 및 성능 평가를 통한 효율성 연구],  2023,  정보보호학회논문지</p>
+                    <p>[Enhanced Authentication for Decentralized IoT Access Control Architecture],  2023,  Cryptography</p>
+                    <p>[Secure Privacy-Preserving V2V Communication in 5G-V2X Supporting Network Slicing],  2022,  IEEE TRANSACTIONS ON INTELLIGENT TRANSPORTATION SYSTEMS</p>
+                    <p><a href="https://www.dbpia.co.kr/author/authorDetail?ancId=1874573">논문 바로가기</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</div>    
+            </div>
+        </section>
+    </main>
+
+    <script>
+window.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.track-button');
+    const descriptions = document.querySelectorAll('.description');
+
+    // 초기 설정: 첫 번째 버튼과 설명 활성화
+    const defaultButton = document.querySelector('.track-button[field="bigdata"]');
+    const defaultDescription = document.querySelector('#bigdata');
+    defaultButton.classList.add('active');
+    defaultDescription.classList.add('active');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // 모든 설명 숨기기
+            descriptions.forEach(description => {
+                description.classList.remove('active');
+            });
+
+            // 모든 버튼 비활성화
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // 현재 버튼과 설명 활성화
+            const field = this.getAttribute('field');
+            document.getElementById(field).classList.add('active');
+            this.classList.add('active');
+        });
+    });
+});
+
+
+    </script>
+    
+</body>
+
+</html>
+

@@ -43,7 +43,7 @@
         }
 
         .track-button {
-            background-color: #444;
+            background-color: rgb(48, 46, 46);;
             border: none;
             padding: 15px;
             cursor: pointer;
@@ -157,7 +157,7 @@
                     <div id="bigdata" class="description active">
                         <ul>
                             <li>하드웨어/소프트웨어의 발전과 함께 과거 알고리즘 중심의 소프트웨어 개발을 넘어서 최근 데이터 중심으로 소프트웨어 개발의 방향 변화</li>
-                            <li>빅데이터트랙은 이러한 흐름 속에서 진화하고 있는 인공지능, IoT등 여러 다른 응용 기술과 연계가 되는 분야</li>
+                            <li>빅데이터 트랙은 이러한 흐름 속에서 진화하고 있는 인공지능, IoT등 여러 다른 응용 기술과 연계가 되는 분야</li>
                             <li>데이터로 컴퓨터를 학습시키고 처리하는 과정에 초점을 맞추며 여러 응용 기술의 기초 지식을 습득하고 적용하는 활동 수행</li>
                         </ul>
                     </div>
@@ -199,22 +199,25 @@
         window.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.track-button');
             const descriptions = document.querySelectorAll('.description');
-
-            // 초기 설정: 빅데이터 트랙 활성화
-            document.querySelector('#bigdata').classList.add('active');
-
+    
+            // 초기 설정: 빅데이터 트랙 버튼 및 설명 활성화
+            const defaultTrack = document.querySelector('[data-track="bigdata"]');
+            const defaultDescription = document.querySelector('#bigdata');
+            defaultTrack.classList.add('active');
+            defaultDescription.classList.add('active');
+    
             buttons.forEach(button => {
                 button.addEventListener('click', function() {
                     // 모든 설명 숨기기
                     descriptions.forEach(description => {
                         description.classList.remove('active');
                     });
-
+    
                     // 모든 버튼 비활성화
                     buttons.forEach(btn => {
                         btn.classList.remove('active');
                     });
-
+    
                     // 현재 버튼과 설명 활성화
                     const trackId = this.getAttribute('data-track');
                     document.getElementById(trackId).classList.add('active');
@@ -223,6 +226,7 @@
             });
         });
     </script>
+    
 </body>
 
 </html>

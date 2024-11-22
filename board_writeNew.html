@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>덕성여자대학교 디지털소프트웨어공학부</title>
+    <style>
+        @import url(default.css);
+
+        /* 학과 소개 섹션 스타일 */
+        .main-section {
+            background-color: white;
+            padding: 3%;
+            margin: 3% auto;
+            width: 92%;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+        /* 학과 소개 제목 스타일 */
+        .main-section h2 {
+            font-size: 1.8em;
+            color:black;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 10px;
+            text-align: left; /* 제목 왼쪽 정렬 */
+        }
+
+        /* 본문 내용 스타일 */
+        .description {
+            font-size: 1.05em;
+            color:black;
+            line-height: 1.8;
+            padding: 2%;
+            text-align: justify; /* 양쪽 정렬 */
+        }
+
+        .description p {
+            margin-bottom: 20px;
+        }
+
+        button {
+                width: 70px;
+                height: 40px;
+                font-size: 13px;
+                color: white;
+                border: none; 
+                box-shadow: none; /* 그림자 제거 */
+                border-radius: 5px;
+                margin-top: 40px; /* 테이블과 버튼 사이의 간격 조정 */
+                background-color: rgb(183, 0, 80);
+                cursor: pointer;
+                display: inline-block;
+                margin-bottom: 0;
+            }
+
+        #title, #author, textarea {
+            font-family: 'SUIT-Regular', Arial, sans-serif; /* 글씨체 설정 */
+            font-size: 0.9em; /* 글씨 크기 */
+            color: black; /* 글씨 색상 */
+            line-height: 1.6; /* 줄 간격 */
+            padding: 10px; /* 내부 여백 */
+            border: 1px solid #ccc; /* 테두리 */
+            border-radius: 5px; /* 테두리 둥글게 */
+            box-sizing: border-box; /* 박스 모델 설정 */
+            width: 100%; /* 입력 필드 너비 */
+        }
+
+        /* 내용 칸 크기 조절 */
+        textarea {
+            height: 200px; /* 높이를 원하는 크기로 설정 */
+            resize: none; /* 크기 조절 비활성화 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 로고와 웹페이지 제목 -->
+    <header>
+        <img src="duksung_logo.svg" width="50" height="50" alt="Duksung Logo">
+        <a href="main.html">덕성여자대학교 디지털소프트웨어공학부</a>
+
+        <!-- 상단 목차 -->
+        <nav>
+            <!-- 학과 소개 -->
+            <span class="diso_intro">학과 소개
+                <div class="dropdown-content">
+                    <a href="diso_intro.html">학과 소개</a>
+                    <a href="goal.html">교육 목표와 인재상</a>
+                    <a href="track_intro.html">트랙 소개</a>
+                    <a href="graduation.html">졸업 요건</a>
+                    <a href="location_contact.html">위치 및 연락처</a>
+                </div>
+            </span>
+            <!-- 교수 소개 -->
+            <span class="prof_intro"><a href="prof_intro.html">교수진 소개</a></span>
+            <!-- 연구 -->
+            <span class="research">연구
+                <div class="dropdown-content">
+                    <a href="lab.html">연구실 목록</a>
+                    <a href="thesis.html">논문 소개</a>
+                </div>
+            </span>
+            <!-- 학사과정 -->
+            <span class="bachelor_course">학사과정
+                <div class="dropdown-content">
+                    <a href="bachelor_course/by_grade.html">학년별 학사 과정</a>
+                    <a href="bachelor_course/common_course.html">트랙 공통 과목</a>
+                    <a href="bachelor_course/bigdata_course.html">트랙 인정 과목 - 빅데이터</a>
+                    <a href="bachelor_course/webapp_course.html">트랙 인정 과목 - 웹앤앱</a>
+                    <a href="bachelor_course/ai_course.html">트랙 인정 과목 - 인공지능</a>
+                    <a href="bachelor_course/IoT_course.html">트랙 인정 과목 - 사물인터넷</a>
+                    <a href="bachelor_course/security_course.html">트랙 인정 과목 - 사이버보안</a>
+                    <a href="bachelor_course/media_course.html">트랙 인정 과목 - 미디어</a>
+                    <a href="bachelor_course/game_course.html">트랙 인정 과목 - 게임</a>
+                </div>
+            </span>
+            <!-- 공지사항 -->
+            <span class="board"><a href="board.html">공지사항</a></span>
+        </nav>
+    </header>
+
+    <!--글쓰기-->
+    <main>
+        <section class="main-section">
+            
+            <div class="description">
+                <form action="save_post.html" method="POST">
+                    <!--제목-->
+                    <label for="title">제목</label>
+                    <input type="text" id="title" name="title"
+                        required style="width: 100%; margin-bottom: 20px; height: 30px;"><br>
+                    <!--본문-->
+                    <label for="content">내용</label>
+                    <textarea id="content" name="content" rows="10" cols="50" required style="width: 100%;"></textarea><br>
+                    <!--작성자-->
+                    <label for="author">작성자</label>
+                    <input type="text" id="author" name="author" required style="width: 100%; margin-bottom: 20px; height: 27px;">
+                    <!--저장 버튼-->
+                    <div style="text-align: right;">
+                        <button type="submit" style="margin-top: 20px; padding: 10px 20px;">저장</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // 폼 제출 기본 동작 방지
+    
+            // 입력 데이터 가져오기
+            const title = document.querySelector('#title').value;
+            const content = document.querySelector('#content').value;
+            const author = document.querySelector('#author').value;
+            const date = new Date().toLocaleDateString(); // 현재 날짜
+    
+            // 기존 저장된 글 목록 가져오기
+            const posts = JSON.parse(localStorage.getItem('posts') || '[]');
+    
+            // 새 글 추가
+            posts.unshift({ title, content, author, date }); // 가장 최근 글이 위로 오도록 `unshift` 사용
+            localStorage.setItem('posts', JSON.stringify(posts)); // 저장
+    
+            alert('글이 저장되었습니다!');
+            location.href = 'board.html'; // 저장 후 게시판으로 이동
+        });
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>덕성여자대학교 디지털소프트웨어공학부</title>
+    <style>
+        @import url(default.css);
+
+        /* 섹션 스타일 */
+        .main-section {
+            background-color: white;
+            padding: 3%;
+            margin: 3% auto;
+            width: 92%;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+        /* 글 제목 스타일 */
+        .main-section h2 {
+            font-size: 1.5em;
+            color:black;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 10px;
+            text-align: left; /* 제목 왼쪽 정렬 */
+        }
+
+        /* 본문 내용 스타일 */
+        .description {
+            font-size: 1.05em;
+            color:black;
+            line-height: 1.8;
+            padding: 2%;
+            text-align: justify; /* 양쪽 정렬 */
+        }
+
+        .description p {
+            margin-bottom: 20px;
+        }
+
+        button {
+                width: 70px;
+                height: 40px;
+                font-size: 13px;
+                color: white;
+                border: none; 
+                box-shadow: none; /* 그림자 제거 */
+                border-radius: 5px;
+                margin-top: 40px; /* 테이블과 버튼 사이의 간격 조정 */
+                background-color: rgb(183, 0, 80);
+                cursor: pointer;
+                display: inline-block;
+                margin-bottom: 0;
+            }
+    </style>
+</head>
+
+<body>
+    <!-- 로고와 웹페이지 제목 -->
+    <header>
+        <img src="duksung_logo.svg" width="50" height="50" alt="Duksung Logo">
+        <a href="main.html">덕성여자대학교 디지털소프트웨어공학부</a>
+
+        <!-- 상단 목차 -->
+        <nav>
+            <!-- 학과 소개 -->
+            <span class="diso_intro">학과 소개
+                <div class="dropdown-content">
+                    <a href="diso_intro.html">학과 소개</a>
+                    <a href="goal.html">교육 목표와 인재상</a>
+                    <a href="track_intro.html">트랙 소개</a>
+                    <a href="graduation.html">졸업 요건</a>
+                    <a href="location_contact.html">위치 및 연락처</a>
+                </div>
+            </span>
+            <!-- 교수 소개 -->
+            <span class="prof_intro"><a href="prof_intro.html">교수진 소개</a></span>
+            <!-- 연구 -->
+            <span class="research">연구
+                <div class="dropdown-content">
+                    <a href="lab.html">연구실 목록</a>
+                    <a href="thesis.html">논문 소개</a>
+                </div>
+            </span>
+            <!-- 학사과정 -->
+            <span class="bachelor_course">학사과정
+                <div class="dropdown-content">
+                    <a href="bachelor_course/by_grade.html">학년별 학사 과정</a>
+                    <a href="bachelor_course/common_course.html">트랙 공통 과목</a>
+                    <a href="bachelor_course/bigdata_course.html">트랙 인정 과목 - 빅데이터</a>
+                    <a href="bachelor_course/webapp_course.html">트랙 인정 과목 - 웹앤앱</a>
+                    <a href="bachelor_course/ai_course.html">트랙 인정 과목 - 인공지능</a>
+                    <a href="bachelor_course/IoT_course.html">트랙 인정 과목 - 사물인터넷</a>
+                    <a href="bachelor_course/security_course.html">트랙 인정 과목 - 사이버보안</a>
+                    <a href="bachelor_course/media_course.html">트랙 인정 과목 - 미디어</a>
+                    <a href="bachelor_course/game_course.html">트랙 인정 과목 - 게임</a>
+                </div>
+            </span>
+            <!-- 공지사항 -->
+            <span class="board"><a href="board.html">공지사항</a></span>
+        </nav>
+    </header>
+
+    <!--글쓰기-->
+    <main>
+        <section class="main-section">
+            <div class="description">
+                <h2 id="post-title">게시글 제목</h2>
+                <p>
+                    작성자: <span id="post-author"></span><br>
+                    작성일: <span id="post-date"></span>
+                </p>
+                <hr><br>
+                <div id="post-content" style="white-space:pre-wrap;">글 내용</div>
+                <br><br>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <!-- 좋아요 버튼 -->
+                    <button id="like-button" style="padding: 10px 20px; background-color: rgb(183, 0, 80); color: white;
+                        border: none; border-radius: 5px; cursor: pointer;"> ❤️ <span id="like-count">0</span></button>
+                    
+                    <!-- 삭제 및 목록 버튼 -->
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="deletePost()">삭제하기</button>
+                        <button onclick="location.href='board.html'">목록으로</button>
+                    </
+                
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // URL에서 index 가져오기
+        const params = new URLSearchParams(window.location.search);
+        const index = params.get('index');
+
+        // localStorage에서 데이터 가져오기
+        const posts = JSON.parse(localStorage.getItem('posts') || '[]');
+        const post = posts[index];
+
+        // 데이터 렌더링
+        if (post) {
+            document.getElementById('post-title').textContent = post.title;
+            document.getElementById('post-author').textContent = post.author;
+            document.getElementById('post-date').textContent = post.date;
+            document.getElementById('post-content').textContent = post.content;
+        
+            // 좋아요 초기화
+            const likeCountElement = document.getElementById('like-count');
+            likeCountElement.textContent = post.likes || 0;
+
+            // 좋아요 버튼 클릭 이벤트
+            document.getElementById('like-button').addEventListener('click', function () {
+                post.likes = (post.likes || 0) + 1; // 좋아요 수 증가
+                likeCountElement.textContent = post.likes;
+                posts[index] = post; // 업데이트된 데이터 저장
+                localStorage.setItem('posts', JSON.stringify(posts));
+                alert('좋아요를 눌렀습니다!');
+            });
+        
+        } else {
+            alert('게시글을 찾을 수 없습니다.');
+            location.href = 'board.html'; // 게시글이 없을 경우 목록으로 이동
+        }
+
+            // 삭제하기 함수
+            function deletePost() {
+            if (confirm('이 게시글을 삭제하시겠습니까?')) {
+                // posts 배열에서 해당 index의 글 삭제
+                posts.splice(index, 1);
+                localStorage.setItem('posts', JSON.stringify(posts)); // localStorage 업데이트
+
+                alert('게시글이 삭제되었습니다.');
+                location.href = 'board.html'; // 게시글 목록으로 이동
+            }
+        }
+    </script>
+
+</body>
+
+</html>

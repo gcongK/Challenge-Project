@@ -60,6 +60,7 @@
             justify-content: space-between; /* 내부 항목을 양 끝으로 정렬 */
             margin-top: 3%;
             margin-left: 4%;
+            margin-bottom: 4%;
         }
 
 
@@ -136,7 +137,7 @@
         <!-- 공지사항 네모 -->
         <section class="board_square">
             <div>
-                <canvas id="board_square" width="640" height="300" style="background-color: white">
+                <canvas id="board_square" width="600" height="200" style="background-color: white">
                 </canvas>
             </div>
         </section>
@@ -150,15 +151,106 @@
         <!-- 트랙 소개 네모 -->
         <section class="track_intro">
             <div>
-                <canvas id="track_intro" width="640" height="300" style="background-color: white">
+                <canvas id="track_intro" width="600" height="200" style="background-color: white">
                 </canvas>
             </div>
         </section>
     </section>
 
     <script>
-        const canvas = document.getElementById('main_square');
-        const ctx = canvas.getContext('2d');
+    const boardCanvas = document.getElementById('board_square');
+    const boardCtx = boardCanvas.getContext('2d');
+
+    // 링크 텍스트와 URL을 포함한 배열
+    const links = [
+        { text: '[공지] 휴강 안내', url: 'http://127.0.0.1:5500/post.html?index=3', y: 30 },
+        { text: '[홍보] 전공능력 기반 전공교육과정 고도화를 위한 재학생 수요조사 실시 안내', url: 'http://127.0.0.1:5500/post.html?index=2', y: 80 },
+        { text: '[홍보] 2024-2학기 학생참여 공모형 워크숍 4차 특강', url: 'http://127.0.0.1:5500/post.html?index=1', y: 130 },
+        { text: '[홍보] 도서구입지원사업', url: 'http://127.0.0.1:5500/post.html?index=0', y: 180 }
+    ];
+
+    // 텍스트 그리기
+    boardCtx.font = '16px ariel';
+    boardCtx.fillStyle = 'black';
+
+    // 각 링크 그리기
+    links.forEach(link => {
+        boardCtx.fillText(link.text, 10, link.y);  // 텍스트 시작 위치 설정
+    });
+
+    // 클릭 이벤트
+    boardCanvas.addEventListener('click', function(event) {
+        const x = event.offsetX;  // 클릭한 x 좌표
+        const y = event.offsetY;  // 클릭한 y 좌표
+
+        links.forEach(link => {
+            const textWidth = boardCtx.measureText(link.text).width;  // 텍스트 너비 계산
+            const textHeight = 16;  // 텍스트 높이는 20px로 고정
+
+            // 클릭 위치가 텍스트 영역 내에 있으면 링크로 이동
+            if (x > 10 && x < 10 + textWidth && y > link.y - textHeight && y < link.y) {
+                window.location.href = link.url;  // 링크로 이동
+            }
+        });
+    });
+
+    // 트랙 소개 캔버스 설정
+    const trackCanvas = document.getElementById('track_intro');
+    const trackCtx = trackCanvas.getContext('2d');
+
+    // 트랙 소개 링크 텍스트와 URL을 포함한 배열
+    const trackLinks = [
+        { text: '빅데이터 트랙', url: 'http://127.0.0.1:5500/track_intro.html', y: 30 },
+        { text: '웹&앱 트랙', url: 'http://127.0.0.1:5500/track_intro.html', y: 69 },
+        { text: '인공지능 트랙', url: 'http://127.0.0.1:5500/track_intro.html', y: 109 },
+        { text: '사물인터넷 트랙', url: 'http://127.0.0.1:5500/track_intro.html', y: 149 },
+        { text: '사이버보안 트랙', url: 'http://127.0.0.1:5500/track_intro.html', y: 189 }
+    ];
+
+    // 텍스트 그리기
+    trackCtx.font = '16px ariel';
+    trackCtx.fillStyle = 'black';
+
+    // 각 트랙 소개 링크 그리기
+    trackLinks.forEach(link => {
+        trackCtx.fillText(link.text, 10, link.y);  // 텍스트 시작 위치 설정
+    });
+
+    // 클릭 이벤트
+    trackCanvas.addEventListener('click', function(event) {
+        const x = event.offsetX;  // 클릭한 x 좌표
+        const y = event.offsetY;  // 클릭한 y 좌표
+
+        trackLinks.forEach(link => {
+            const textWidth = trackCtx.measureText(link.text).width;  // 텍스트 너비 계산
+            const textHeight = 16;  // 텍스트 높이는 16px로 고정
+
+            // 클릭 위치가 텍스트 영역 내에 있으면 링크로 이동
+            if (x > 10 && x < 10 + textWidth && y > link.y - textHeight && y < link.y) {
+                window.location.href = link.url;  // 링크로 이동
+            }
+        });
+    });
+
+    // ** 추가된 코드 시작 **
+    const mainSquareCanvas = document.getElementById('main_square');
+    const mainSquareCtx = mainSquareCanvas.getContext('2d');
+    // 텍스트 스타일 설정
+    mainSquareCtx.font = '30px Arial';
+    mainSquareCtx.fillStyle = 'black';
+    mainSquareCtx.textAlign = 'left';
+    mainSquareCtx.textBaseline = 'middle';
+    // 텍스트 내용
+    const text = '도전하며 성장하는 미래\n여성 과학 인재의 요람\n덕성여대 디지털소프트웨어공학부';
+    // 텍스트를 줄 단위로 나누기
+    const lines = text.split('\n');
+    const lineHeight = 50; // 줄 간격 설정
+    // 각 줄을 캔버스에 그리기
+    lines.forEach((line, index) => {
+        const y = mainSquareCanvas.height / 2 - (lines.length - 1) * lineHeight / 2 + index * lineHeight;
+        mainSquareCtx.fillText(line, 50, y);
+    });
+
     </script>
 </body>
 

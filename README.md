@@ -1,8 +1,6 @@
 📍 Duksung-Challenge-Project: 덕성여대 디지털소프트웨어공학부 홈페이지 개선
 
-💡 기술 스택: HTML, CSS, Javascript, Node.js
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=gcongK)](https://github.com/anuraghazra/github-readme-stats)
-출처: https://hulrud.tistory.com/3
+💡 기술 스택: <img src="https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" />
 
 <프로젝틑 개요>
 2023년에 신설된 디지털소프트웨어공학부의 웹사이트를 개선하여 새로운 웹페이지를 개발하는 것을 목표로 하는 프로젝트이다.
